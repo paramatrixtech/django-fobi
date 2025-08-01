@@ -1,0 +1,16 @@
+-r common.in
+-r test.in
+-r style_checkers.in
+-r feincms_1_20.in
+
+Django
+django-admin-tools
+django-autoslug
+django-ckeditor
+django-debug-toolbar
+django-formtools
+django-registration
+django-simple-captcha
+djangorestframework
+easy-thumbnails
+drf-yasg

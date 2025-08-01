@@ -2,7 +2,7 @@ version: '3'
 
 services:
   postgresql:
-    image: postgres:14-bullseye
+    image: postgres:16.2-alpine3.19
     restart: always
 #    network_mode: "host"
     volumes:
@@ -25,9 +25,6 @@ services:
     build:
       context: .
       dockerfile: ./docker/backend/Dockerfile
-    volumes:
-      - .:/backend
-      - ./docker/backend:/docker/backend
 #    network_mode: "host"
     ports:
       - "8000:8000"
@@ -35,8 +32,6 @@ services:
     - postgresql
     links:
       - postgresql:postgresql
-    entrypoint:
-      - /backend/docker/backend/entrypoint.sh
     environment:
       - POSTGRES_NAME=fobi
       - POSTGRES_USER=postgres
